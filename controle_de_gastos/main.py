@@ -76,4 +76,3 @@ while True:
     else:
         print("Opção inválida. Tente novamente.")
 
-# banana
