@@ -19,6 +19,11 @@ while True:
         while True:
             try:
                 valor = float(input("Digite o valor da movimentação: "))
+
+                if valor <= 0:
+                    print("O valor deve ser maior que zero.")
+                    continue
+
                 break
             except ValueError:
                 print("Valor inválido. Digite um número válido.")
