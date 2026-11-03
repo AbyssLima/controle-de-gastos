@@ -16,7 +16,13 @@ while True:
         break
 
     elif opcao == "1":
-        nome = input("Digite o nome da movimentação: ")
+        while True:
+            nome = input("Nome da movimentação: ").strip()
+
+            if nome:
+                break
+
+            print("O nome não pode ficar vazio.")
 
         while True:
             try:
