@@ -1,6 +1,7 @@
 movimentacoes = []
 
-while True:
+
+def mostrar_menu():
     print("\n=== CONTROLE FINANCEIRO ===")
     print("1 - Adicionar movimentação")
     print("2 - Listar movimentações")
@@ -9,12 +10,14 @@ while True:
     print("5 - Editar movimentação")
     print("0 - Sair")
 
+
+while True:
+    mostrar_menu()
     opcao = input("Escolha uma opção: ")
 
     if opcao == "0":
         print("Programa encerrado.")
         break
-
     elif opcao == "1":
         while True:
             nome = input("Nome da movimentação: ").strip()
