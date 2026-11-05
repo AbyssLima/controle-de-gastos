@@ -10,10 +10,13 @@ def mostrar_menu():
     print("5 - Editar movimentação")
     print("0 - Sair")
 
+def obter_opcao():
+    opcao = input("Escolha uma opção: ")
+    return opcao
 
 while True:
     mostrar_menu()
-    opcao = input("Escolha uma opção: ")
+    opcao = obter_opcao()
 
     if opcao == "0":
         print("Programa encerrado.")
