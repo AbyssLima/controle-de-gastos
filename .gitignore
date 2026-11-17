@@ -1,5 +1,7 @@
+
 /*
 !/.gitignore
+!/README.md
 !/controle_de_gastos/
 /controle_de_gastos/*
 !/controle_de_gastos/main.py
