@@ -18,10 +18,13 @@ O projeto está em desenvolvimento e faz parte do meu portfólio de programaçã
 - Calcular receitas, despesas e saldo.
 - Agrupar despesas por categoria.
 - Validar valores e tipos de movimentação.
+- Salvar movimentações em arquivos JSON.
+- Carregar movimentações automaticamente ao iniciar o programa.
 
 ## Tecnologias utilizadas
 
 - Python 3
+- JSON
 - Git
 - GitHub
 
@@ -36,9 +39,10 @@ O projeto está em desenvolvimento e faz parte do meu portfólio de programaçã
 python controle_de_gastos/main.py
 ```
 
+O arquivo `movimentacoes.json` será criado automaticamente na primeira gravação. Os dados ficam armazenados localmente e são carregados quando o programa é iniciado novamente.
+
 ## Próximas melhorias
 
-- Implementar persistência de dados com arquivos JSON.
 - Melhorar as validações de entrada.
 - Ampliar os testes.
 - Aprimorar a organização do código.
