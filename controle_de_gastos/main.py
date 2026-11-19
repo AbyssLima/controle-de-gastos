@@ -1,3 +1,17 @@
+import json
+
+def salvar_movimentacoes():
+    with open("movimentacoes.json", "w") as arquivo:
+        json.dump(movimentacoes, arquivo, indent=4)
+
+def carregar_movimentacoes():
+    try:
+        with open("movimentacoes.json", "r") as arquivo:
+            movimentacoes.extend(json.load(arquivo))
+    except FileNotFoundError:
+        pass
+
+
 movimentacoes = []
 
 
@@ -44,6 +58,7 @@ def adicionar_movimentacao():
         tipo = input("Despesa ou Receita? ").lower()
 
     movimentacoes.append([nome, valor, categoria, tipo])
+    salvar_movimentacoes()
 
 
 def listar_movimentacoes():
@@ -103,6 +118,7 @@ def excluir_movimentacao():
 
             if 1 <= indice_excluir <= len(movimentacoes):
                 del movimentacoes[indice_excluir - 1]
+                salvar_movimentacoes()
                 print("Movimentação excluída com sucesso.")
                 break
             print("Índice inválido. Tente novamente.")
@@ -171,8 +187,11 @@ def editar_movimentacao():
             continue
 
         print("Movimentação editada com sucesso.")
+        salvar_movimentacoes()
         break
 
+
+carregar_movimentacoes()
 
 while True:
     mostrar_menu()
