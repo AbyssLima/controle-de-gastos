@@ -6,7 +6,7 @@ Projeto desenvolvido em Python com o objetivo de praticar lógica de programaç�
 
 O Controle Financeiro Pessoal é uma aplicação de terminal (CLI) que permite cadastrar e gerenciar movimentações financeiras, como receitas e despesas.
 
-O projeto está em desenvolvimento e faz parte do meu portfólio de programação.
+O projeto faz parte do meu portfólio de programação e está em desenvolvimento contínuo.
 
 ## Funcionalidades
 
@@ -17,9 +17,10 @@ O projeto está em desenvolvimento e faz parte do meu portfólio de programaçã
 - Consultar resumo financeiro.
 - Calcular receitas, despesas e saldo.
 - Agrupar despesas por categoria.
-- Validar valores e tipos de movimentação.
+- Validar campos, valores e tipos de movimentação.
 - Salvar movimentações em arquivos JSON.
 - Carregar movimentações automaticamente ao iniciar o programa.
+- Tratar arquivos JSON vazios ou com conteúdo inválido.
 
 ## Tecnologias utilizadas
 
@@ -32,7 +33,7 @@ O projeto está em desenvolvimento e faz parte do meu portfólio de programaçã
 
 1. Clone este repositório.
 2. Certifique-se de ter o Python instalado.
-3. Abra o terminal na pasta do projeto.
+3. Abra o terminal na pasta principal do projeto.
 4. Execute:
 
 ```bash
@@ -43,9 +44,9 @@ O arquivo `movimentacoes.json` será criado automaticamente na primeira gravaç�
 
 ## Próximas melhorias
 
-- Melhorar as validações de entrada.
-- Ampliar os testes.
+- Ampliar os testes e melhorar o tratamento de erros.
 - Aprimorar a organização do código.
+- Implementar novas funcionalidades.
 
 ## Status do projeto
 
