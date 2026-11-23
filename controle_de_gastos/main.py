@@ -7,9 +7,15 @@ def salvar_movimentacoes():
 def carregar_movimentacoes():
     try:
         with open("movimentacoes.json", "r") as arquivo:
-            movimentacoes.extend(json.load(arquivo))
+            dados = json.load(arquivo)
+
+            if isinstance(dados, list):
+                movimentacoes.extend(dados)
+
     except FileNotFoundError:
         pass
+    except json.JSONDecodeError:
+        print("Erro: o arquivo JSON está vazio ou possui conteúdo inválido.")
 
 
 movimentacoes = []
@@ -50,12 +56,19 @@ def adicionar_movimentacao():
         except ValueError:
             print("Valor inválido. Digite um número válido.")
 
-    categoria = input("Digite a categoria da movimentação: ").lower()
-    tipo = input("Despesa ou Receita? ").lower()
+    while True:
+        categoria = input("Digite a categoria da movimentação: ").strip().lower()
+
+        if categoria:
+            break
+
+        print("A categoria não pode ficar vazia.")
+
+    tipo = input("Despesa ou Receita? ").strip().lower()
 
     while tipo not in ["despesa", "receita"]:
         print("Tipo inválido. Digite 'Despesa' ou 'Receita'.")
-        tipo = input("Despesa ou Receita? ").lower()
+        tipo = input("Despesa ou Receita? ").strip().lower()
 
     movimentacoes.append([nome, valor, categoria, tipo])
     salvar_movimentacoes()
@@ -162,20 +175,36 @@ def editar_movimentacao():
         campo = input("Escolha o campo: ")
 
         if campo == "1":
-            movimentacao[0] = input("Digite o novo nome: ")
+            while True:
+                novo_nome = input("Digite o novo nome: ").strip()
+
+                if novo_nome:
+                    movimentacao[0] = novo_nome
+                    break
+
+                print("O nome não pode ficar vazio.")
         elif campo == "2":
             while True:
                 try:
                     novo_valor = float(input("Digite o novo valor: "))
+
                     if novo_valor <= 0:
                         print("O valor deve ser maior que zero.")
                         continue
+
                     movimentacao[1] = novo_valor
                     break
                 except ValueError:
-                    print("Digite um número válido.")
+                    print("Valor inválido. Digite um número válido.")
         elif campo == "3":
-            movimentacao[2] = input("Digite a nova categoria: ").lower()
+            while True:
+                nova_categoria = input("Digite a nova categoria: ").strip().lower()
+
+                if nova_categoria:
+                    movimentacao[2] = nova_categoria
+                    break
+
+                print("A categoria não pode ficar vazia.")
         elif campo == "4":
             novo_tipo = input("Despesa ou Receita? ").lower()
             while novo_tipo not in ["despesa", "receita"]:
