@@ -206,10 +206,10 @@ def editar_movimentacao():
 
                 print("A categoria não pode ficar vazia.")
         elif campo == "4":
-            novo_tipo = input("Despesa ou Receita? ").lower()
+            novo_tipo = input("Despesa ou Receita? ").strip().lower()
             while novo_tipo not in ["despesa", "receita"]:
                 print("Tipo inválido. Digite 'Despesa' ou 'Receita'.")
-                novo_tipo = input("Despesa ou Receita? ").lower()
+                novo_tipo = input("Despesa ou Receita? ").strip().lower()
             movimentacao[3] = novo_tipo
         else:
             print("Opção inválida. Tente novamente.")
